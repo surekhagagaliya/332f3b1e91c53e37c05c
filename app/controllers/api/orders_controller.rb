@@ -4,6 +4,6 @@ class Api::OrdersController < ApplicationController
     @input = params[:commands] if params.has_key?(:commands)
     @result = ""
     @result = ToyRobot.calculate(@input) if @input != "Undefined"
-    render json: @result
+    render json: @result.join(',')
   end
 end
